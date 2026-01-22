@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapvastore | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <div class="logo"><i class="fa-solid fa-gamepad"></i></div>
+            <div class="company-name">RAPVASTORE</div>
+        </div>
+        <div class="search-placeholder"></div> 
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li id="userStatus" style="display: none;">
+                    <span style="color: var(--primary-color); font-weight: bold;">Hi, <span id="usernameDisplay">Gamer</span></span>
+                    <a href="#" id="logoutBtn" style="color: red; margin-left: 10px; font-size: 0.9rem;">(Logout)</a>
+                </li>
+                <li id="loginNavItem"><a href="#" id="openLoginBtn">Login</a></li>
+                <li class="cart-icon-container">
+                    <a href="shop.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <span id="cartCount" class="cart-badge">0</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Dominate the Arena</h1>
+        <p class="description">
+            Welcome to Rapvastore. We provide the ultimate gaming gear for professionals. 
+            High performance, low latency, and elite style.
+        </p>
+        <a href="shop.html" class="cta-button">Shop Now</a>
+    </section>
+
+    <section id="reviews" class="testimonials">
+        <h2 class="section-title">Gamer Testimonies</h2>
+        <div class="testimonial-grid">
+            <div class="testimony-card">
+                <p>"Rapvastore changed my setup entirely. Fast delivery!"</p>
+                <h4>- Muhammad Nur Rizky</h4>
+            </div>
+            <div class="testimony-card">
+                <p>"Best customer service. They helped me pick the right mouse."</p>
+                <h4>- Sayid khaedar</h4>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="copyright">&copy; 2026 Rapvastore Inc.</p>
+    </footer>
+
+   <div id="loginModal" class="modal">
+        <div class="modal-content" style="max-width: 350px;">
+            <span class="close-modal" id="closeLogin">&times;</span>
+            
+            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+                <h2 id="tabLogin" style="cursor: pointer; color: var(--primary-color); border-bottom: 2px solid var(--primary-color);">LOGIN</h2>
+                <h2 id="tabRegister" style="cursor: pointer; color: #888;">REGISTER</h2>
+            </div>
+
+            <form id="loginForm">
+                <label>Username</label>
+                <input type="text" id="loginUser" required placeholder="Enter username">
+                <label>Password</label>
+                <input type="password" id="loginPass" required placeholder="Enter password">
+                <button type="submit" class="cta-button full-width">LOGIN</button>
+                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem;">
+                    Don't have an account? <a href="#" id="linkToRegister" style="color: var(--primary-color);">Register here</a>
+                </p>
+            </form>
+
+            <form id="registerForm" style="display: none;">
+                <label>New Username</label>
+                <input type="text" id="regUser" required placeholder="Choose a username">
+                <label>New Password</label>
+                <input type="password" id="regPass" required placeholder="Choose a password">
+                
+                <button type="submit" class="cta-button full-width">CREATE ACCOUNT</button>
+                
+                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem;">
+                    Already have an account? <a href="#" id="linkToLogin" style="color: var(--primary-color);">Login here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+            <form id="registerForm" style="display: none;">
+                <label>New Username</label>
+                <input type="text" id="regUser" required placeholder="Choose a username">
+                <label>New Password</label>
+                <input type="password" id="regPass" required placeholder="Choose a password">
+                <button type="submit" class="cta-button full-width" style="background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color);">CREATE ACCOUNT</button>
+                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem;">
+                    Already have an account? <a href="#" id="linkToLogin" style="color: var(--primary-color);">Login here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closePayment">&times;</span>
+            <h2 style="text-align: center; margin-bottom: 20px;">Secure Checkout</h2>
+            
+            <form id="paymentForm">
+                <label>Full Name</label>
+                <input type="text" required placeholder="Enter your name">
+                
+                <label>Shipping Address</label>
+                <input type="text" required placeholder="Full shipping address">
+
+                <label style="margin-top: 15px; display: block;">Payment Method</label>
+                <div class="payment-options">
+                    
+                    <label class="pay-card">
+                        <input type="radio" name="paymentMethod" value="Credit Card" checked>
+                        <div class="pay-content">
+                            <i class="fa-solid fa-credit-card"></i>
+                            <span>Credit Card</span>
+                        </div>
+                    </label>
+
+                    <label class="pay-card">
+                        <input type="radio" name="paymentMethod" value="Bank Transfer">
+                        <div class="pay-content">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <span>Bank Transfer</span>
+                        </div>
+                    </label>
+
+                    <label class="pay-card">
+                        <input type="radio" name="paymentMethod" value="E-Wallet">
+                        <div class="pay-content">
+                            <i class="fa-solid fa-wallet"></i>
+                            <span>E-Wallet</span>
+                        </div>
+                    </label>
+
+                    <label class="pay-card">
+                        <input type="radio" name="paymentMethod" value="COD">
+                        <div class="pay-content">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <span>COD</span>
+                        </div>
+                    </label>
+
+                </div>
+
+                <button type="submit" class="cta-button full-width" style="margin-top: 20px;">
+                    Pay Now ($<span id="payAmount">0</span>)
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="notification-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>
